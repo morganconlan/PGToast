@@ -9,43 +9,43 @@
 
 @implementation UIView (PGToastStyle)
 
-+ (CGFloat)ap_toastMaxHeightPercent {
++ (CGFloat)toastMaxHeightPercent {
     return 0.8f; // 80% of parent view height
 }
 
-+ (CGFloat)ap_toastHorizontalPadding {
++ (CGFloat)toastHorizontalPadding {
     return 6.f;
 }
 
-+ (CGFloat)ap_toastVerticalPadding {
++ (CGFloat)toastVerticalPadding {
     return 6.f;
 }
 
-+ (CGFloat)ap_toastMinHeight {
++ (CGFloat)toastMinHeight {
     return 40.f;
 }
 
-+ (CGFloat)ap_toastCornerRadius {
++ (CGFloat)toastCornerRadius {
     return 3.f;
 }
 
-+ (CGFloat)ap_toastOpacity {
++ (CGFloat)toastOpacity {
     return 0.8f;
 }
 
-+ (UIFont *)ap_toastFont {
++ (UIFont *)toastFont {
     return [UIFont systemFontOfSize:16.f];
 }
 
-+ (NSInteger)ap_toastMaxNumberOfLines {
++ (NSInteger)toastMaxNumberOfLines {
     return 2;
 }
 
-+ (NSTimeInterval)ap_toastDuration {
++ (NSTimeInterval)toastDuration {
     return 2.f;
 }
 
-+ (BOOL)ap_toastTapToComplete {
++ (BOOL)toastTapToComplete {
     return YES;
 }
 

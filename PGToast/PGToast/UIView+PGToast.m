@@ -16,94 +16,151 @@
 
 #pragma mark - Text toast
 
-- (NSInteger)ap_makeToast:(NSString *)toastText {
-    return [self ap_makeToast:toastText duration:[[self class] ap_toastDuration]];
+- (NSInteger)makeToast:(NSString *)toastText {
+
+    return [self makeToast:toastText
+                  duration:[[self class] toastDuration]];
+
 }
 
-- (NSInteger)ap_makeToast:(NSString *)toastText duration:(NSTimeInterval)duration {
-    return [self ap_makeToast:toastText duration:duration position:PGToastPositionBottom];
+- (NSInteger)makeToast:(NSString *)toastText
+              duration:(NSTimeInterval)duration {
+
+    return [self makeToast:toastText
+                  duration:duration
+                  position:PGToastPositionBottom];
+
 }
 
-- (NSInteger)ap_makeToast:(NSString *)toastText duration:(NSTimeInterval)duration position:(PGToastPosition)position {
-    return [self ap_makeToast:toastText duration:duration position:position completion:nil];
+- (NSInteger)makeToast:(NSString *)toastText
+              duration:(NSTimeInterval)duration
+              position:(PGToastPosition)position {
+
+    return [self makeToast:toastText
+                  duration:duration
+                  position:position
+                completion:nil];
+
 }
 
-- (NSInteger)ap_makeToast:(NSString *)toastText duration:(NSTimeInterval)duration position:(PGToastPosition)position completion:(void (^)(void))completion {
-    if (!toastText.length) {
-        return NSNotFound;
-    }
+- (NSInteger)makeToast:(NSString *)toastText
+              duration:(NSTimeInterval)duration
+              position:(PGToastPosition)position
+            completion:(void (^)(void))completion {
+
+    if (!toastText.length) return NSNotFound;
     
-    UIView *toastView = [self ap_toastViewForText:toastText];
-    CGPoint center = [self ap_centerPointForPosition:position toastView:toastView];
-    return [self ap_makeToastView:toastView duration:duration center:center tapToComplete:[[self class] ap_toastTapToComplete] completion:completion];
+    UIView *toastView = [self toastViewForText:toastText];
+    CGPoint center = [self centerPointForPosition:position
+                                        toastView:toastView];
+
+    return [self makeToastView:toastView
+                      duration:duration
+                        center:center
+                 tapToComplete:[[self class] toastTapToComplete]
+                    completion:completion];
+
 }
 
-- (NSInteger)ap_makeToast:(NSString *)toastText
+- (NSInteger)makeToast:(NSString *)toastText
                  duration:(NSTimeInterval)duration
                    center:(CGPoint)center
             tapToComplete:(BOOL)tapToComplete
                completion:(void (^)(void))completion {
-    if (!toastText.length) {
-        return NSNotFound;
-    }
+
+    if (!toastText.length) return NSNotFound;
     
-    UIView *toastView = [self ap_toastViewForText:toastText];
-    return [self ap_makeToastView:toastView duration:duration center:center tapToComplete:tapToComplete completion:completion];
+    UIView *toastView = [self toastViewForText:toastText];
+    return [self makeToastView:toastView
+                      duration:duration
+                        center:center
+                 tapToComplete:tapToComplete
+                    completion:completion];
+
 }
 
 #pragma mark - View toast
 
-- (NSInteger)ap_makeToastView:(UIView *)toastView {
-    return [self ap_showToastView:toastView duration:[[self class] ap_toastDuration]];
+- (NSInteger)makeToastView:(UIView *)toastView {
+
+    return [self showToastView:toastView
+                      duration:[[self class] toastDuration]];
+
 }
 
-- (NSInteger)ap_showToastView:(UIView *)toastView duration:(NSTimeInterval)duration {
-    return [self ap_makeToastView:toastView duration:duration position:PGToastPositionBottom];
+- (NSInteger)showToastView:(UIView *)toastView
+                  duration:(NSTimeInterval)duration {
+
+    return [self makeToastView:toastView
+                      duration:duration
+                      position:PGToastPositionBottom];
+
 }
 
-- (NSInteger)ap_makeToastView:(UIView *)toastView duration:(NSTimeInterval)duration position:(PGToastPosition)position {
-    CGPoint center = [self ap_centerPointForPosition:position toastView:toastView];
-    return [self ap_makeToastView:toastView duration:duration center:center tapToComplete:[[self class] ap_toastTapToComplete] completion:nil];
+- (NSInteger)makeToastView:(UIView *)toastView
+                  duration:(NSTimeInterval)duration
+                  position:(PGToastPosition)position {
+
+    CGPoint center = [self centerPointForPosition:position
+                                        toastView:toastView];
+    return [self makeToastView:toastView
+                      duration:duration
+                        center:center
+                 tapToComplete:[[self class] toastTapToComplete]
+                    completion:nil];
+
 }
 
-- (NSInteger)ap_makeToastView:(UIView *)toastView
+- (NSInteger)makeToastView:(UIView *)toastView
                      duration:(NSTimeInterval)duration
                        center:(CGPoint)center
                 tapToComplete:(BOOL)tapToComplete
                    completion:(void (^)(void))completion {
-    if (!toastView) {
-        return NSNotFound;
-    }
-    
+
+    if (!toastView) return NSNotFound;
+
     toastView.center = center;
     
-    return [[PGToaster sharedInstance] makeToast:toastView parentView:self duration:duration tapToComplete:tapToComplete completion:completion];
+    return [[PGToaster sharedInstance] makeToast:toastView
+                                      parentView:self
+                                        duration:duration
+                                   tapToComplete:tapToComplete
+                                      completion:completion];
+
 }
 
 #pragma mark - Eject
 
-- (void)ap_ejectToast:(NSInteger)toastID {
-    [self ap_ejectToast:toastID animated:YES];
+- (void)ejectToast:(NSInteger)toastID {
+
+    [self ejectToast:toastID
+            animated:YES];
+
 }
 
-- (void)ap_ejectToast:(NSInteger)toastID animated:(BOOL)animated {
-    [[PGToaster sharedInstance] ejectToastWithID:toastID animated:animated];
+- (void)ejectToast:(NSInteger)toastID
+          animated:(BOOL)animated {
+
+    [[PGToaster sharedInstance] ejectToastWithID:toastID
+                                        animated:animated];
+
 }
 
 #pragma mark - Text toast view
 
-- (UIView *)ap_toastViewForText:(NSString *)toastText {
+- (UIView *)toastViewForText:(NSString *)toastText {
+
     UIView *toastView = [[UIView alloc] init];
     toastView.autoresizingMask = (UIViewAutoresizingFlexibleLeftMargin |
                                   UIViewAutoresizingFlexibleRightMargin |
                                   UIViewAutoresizingFlexibleTopMargin |
                                   UIViewAutoresizingFlexibleBottomMargin);
-    toastView.layer.cornerRadius = [[self class] ap_toastCornerRadius];
-    toastView.backgroundColor = [UIColor colorWithWhite:0.f alpha:[[self class] ap_toastOpacity]];
+    toastView.layer.cornerRadius = [[self class] toastCornerRadius];
+    toastView.backgroundColor = [UIColor colorWithWhite:0.f alpha:[[self class] toastOpacity]];
     
     UILabel *textLabel = [[UILabel alloc] init];
-    textLabel.numberOfLines = [[self class] ap_toastMaxNumberOfLines];
-    textLabel.font = [[self class] ap_toastFont];
+    textLabel.numberOfLines = [[self class] toastMaxNumberOfLines];
+    textLabel.font = [[self class] toastFont];
     textLabel.lineBreakMode = NSLineBreakByWordWrapping;
     textLabel.textAlignment = NSTextAlignmentCenter;
     textLabel.backgroundColor = [UIColor clearColor];
@@ -111,22 +168,25 @@
     textLabel.text = toastText;
     [toastView addSubview:textLabel];
     
-    CGFloat horizontalPadding = [[self class] ap_toastHorizontalPadding] * 2;
+    CGFloat horizontalPadding = [[self class] toastHorizontalPadding] * 2;
     CGFloat toastViewWidth = CGRectGetWidth(self.bounds) - horizontalPadding;
-    CGSize maxTextSize = CGSizeMake(toastViewWidth - horizontalPadding, CGRectGetHeight(self.bounds) * [[self class] ap_toastMaxHeightPercent]);
-    CGSize textSize = [textLabel.text ap_toastSizeWithFont:textLabel.font constrainedToSize:maxTextSize lineBreakMode:textLabel.lineBreakMode];
-    CGFloat toastViewHeight = MAX(textSize.height + [[self class] ap_toastVerticalPadding] * 2, [[self class] ap_toastMinHeight]);
+    CGSize maxTextSize = CGSizeMake(toastViewWidth - horizontalPadding, CGRectGetHeight(self.bounds) * [[self class] toastMaxHeightPercent]);
+    CGSize textSize = [textLabel.text toastSizeWithFont:textLabel.font constrainedToSize:maxTextSize lineBreakMode:textLabel.lineBreakMode];
+    CGFloat toastViewHeight = MAX(textSize.height + [[self class] toastVerticalPadding] * 2, [[self class] toastMinHeight]);
     
     toastView.frame = CGRectMake(0.f, 0.f, toastViewWidth, toastViewHeight);
     textLabel.frame = toastView.bounds;
     
     return toastView;
+
 }
 
 #pragma mark - Additions
 
-- (CGPoint)ap_centerPointForPosition:(PGToastPosition)position toastView:(UIView *)toastView {
-    CGFloat padding = [[self class] ap_toastVerticalPadding];
+- (CGPoint)centerPointForPosition:(PGToastPosition)position
+                        toastView:(UIView *)toastView {
+
+    CGFloat padding = [[self class] toastVerticalPadding];
     CGFloat w = CGRectGetWidth(self.bounds);
     CGFloat h = CGRectGetHeight(self.bounds);
     CGFloat toastHeight = CGRectGetHeight(toastView.frame);
@@ -139,6 +199,7 @@
         case PGToastPositionCenter:
             return CGPointMake(w / 2.f, h / 2.f);
     }
+
 }
 
 @end

@@ -29,7 +29,7 @@ typedef NS_ENUM(NSInteger, PGToastPosition) {
  *
  *  @return Unique auto-generated `toastID`, which can be used to force early completion toasting or `NSNotFound` (if toast not queued due to incorrect parameters)
  */
-- (NSInteger)ap_makeToast:(NSString *)toastText;
+- (NSInteger)makeToast:(NSString *)toastText;
 
 /**
  *  Make simple toast with `toastText` with default position.
@@ -39,7 +39,8 @@ typedef NS_ENUM(NSInteger, PGToastPosition) {
  *
  *  @return Unique auto-generated `toastID`, which can be used to force early completion toasting or `NSNotFound` (if toast not queued due to incorrect parameters)
  */
-- (NSInteger)ap_makeToast:(NSString *)toastText duration:(NSTimeInterval)duration;
+- (NSInteger)makeToast:(NSString *)toastText
+              duration:(NSTimeInterval)duration;
 
 /**
  *  Make simple toast with `toastText`.
@@ -50,7 +51,9 @@ typedef NS_ENUM(NSInteger, PGToastPosition) {
  *
  *  @return Unique auto-generated `toastID`, which can be used to force early completion toasting or `NSNotFound` (if toast not queued due to incorrect parameters)
  */
-- (NSInteger)ap_makeToast:(NSString *)toastText duration:(NSTimeInterval)duration position:(PGToastPosition)position;
+- (NSInteger)makeToast:(NSString *)toastText
+              duration:(NSTimeInterval)duration
+              position:(PGToastPosition)position;
 
 /**
  *  Make simple toast with `toastText`.
@@ -62,7 +65,10 @@ typedef NS_ENUM(NSInteger, PGToastPosition) {
  *
  *  @return Unique auto-generated `toastID`, which can be used to force early completion toasting or `NSNotFound` (if toast not queued due to incorrect parameters)
  */
-- (NSInteger)ap_makeToast:(NSString *)toastText duration:(NSTimeInterval)duration position:(PGToastPosition)position completion:(void (^)(void))completion;
+- (NSInteger)makeToast:(NSString *)toastText
+              duration:(NSTimeInterval)duration
+              position:(PGToastPosition)position
+            completion:(void (^)(void))completion;
 
 /**
  *  Make simple toast with `toastText`.
@@ -75,7 +81,7 @@ typedef NS_ENUM(NSInteger, PGToastPosition) {
  *
  *  @return Unique auto-generated `toastID`, which can be used to force early completion toasting or `NSNotFound` (if toast not queued due to incorrect parameters)
  */
-- (NSInteger)ap_makeToast:(NSString *)toastText
+- (NSInteger)makeToast:(NSString *)toastText
                  duration:(NSTimeInterval)duration
                    center:(CGPoint)center
             tapToComplete:(BOOL)tapToComplete
@@ -93,7 +99,7 @@ typedef NS_ENUM(NSInteger, PGToastPosition) {
  *
  *  @return Unique auto-generated `toastID`, which can be used to force early completion toasting or `NSNotFound` (if toast not queued due to incorrect parameters)
  */
-- (NSInteger)ap_makeToastView:(UIView *)toastView;
+- (NSInteger)makeToastView:(UIView *)toastView;
 
 /**
  *  Make toast with `toastView` with default position.
@@ -104,7 +110,8 @@ typedef NS_ENUM(NSInteger, PGToastPosition) {
  *
  *  @return Unique auto-generated `toastID`, which can be used to force early completion toasting or `NSNotFound` (if toast not queued due to incorrect parameters)
  */
-- (NSInteger)ap_showToastView:(UIView *)toastView duration:(NSTimeInterval)duration;
+- (NSInteger)showToastView:(UIView *)toastView
+                  duration:(NSTimeInterval)duration;
 
 /**
  *  Make toast with `toastView`.
@@ -116,7 +123,9 @@ typedef NS_ENUM(NSInteger, PGToastPosition) {
  *
  *  @return Unique auto-generated `toastID`, which can be used to force early completion toasting or `NSNotFound` (if toast not queued due to incorrect parameters)
  */
-- (NSInteger)ap_makeToastView:(UIView *)toastView duration:(NSTimeInterval)duration position:(PGToastPosition)position;
+- (NSInteger)makeToastView:(UIView *)toastView
+                  duration:(NSTimeInterval)duration
+                  position:(PGToastPosition)position;
 
 /**
  *  Make toast with `toastView`.
@@ -131,7 +140,7 @@ typedef NS_ENUM(NSInteger, PGToastPosition) {
  *
  *  @return Unique auto-generated `toastID`, which can be used to force early completion toasting or `NSNotFound` (if toast not queued due to incorrect parameters)
  */
-- (NSInteger)ap_makeToastView:(UIView *)toastView
+- (NSInteger)makeToastView:(UIView *)toastView
                      duration:(NSTimeInterval)duration
                        center:(CGPoint)center
                 tapToComplete:(BOOL)tapToComplete
@@ -144,7 +153,7 @@ typedef NS_ENUM(NSInteger, PGToastPosition) {
 /**
  *  Animated ejects toast with specified `toastID` (if it exists) from toasting
  */
-- (void)ap_ejectToast:(NSInteger)toastID;
+- (void)ejectToast:(NSInteger)toastID;
 
 /**
  *  Ejects toast with specified `toastID` (if it exists) from toasting.
@@ -153,6 +162,7 @@ typedef NS_ENUM(NSInteger, PGToastPosition) {
 /**
  *  Ejects toast with specified `toastID` (if it exists) from toasting.
  */
-- (void)ap_ejectToast:(NSInteger)toastID animated:(BOOL)animated;
+- (void)ejectToast:(NSInteger)toastID
+          animated:(BOOL)animated;
 
 @end

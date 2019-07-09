@@ -9,7 +9,7 @@
 
 @interface NSString (PGToast)
 
-- (CGSize)ap_toastSizeWithFont:(UIFont *)font
+- (CGSize)toastSizeWithFont:(UIFont *)font
              constrainedToSize:(CGSize)maxSize
                  lineBreakMode:(NSLineBreakMode)lineBreakMode;
 

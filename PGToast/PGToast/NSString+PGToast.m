@@ -9,7 +9,10 @@
 
 @implementation NSString (PGToast)
 
-- (CGSize)ap_toastSizeWithFont:(UIFont *)font constrainedToSize:(CGSize)maxSize lineBreakMode:(NSLineBreakMode)lineBreakMode {
+- (CGSize)toastSizeWithFont:(UIFont *)font
+          constrainedToSize:(CGSize)maxSize
+              lineBreakMode:(NSLineBreakMode)lineBreakMode {
+
     CGSize size;
 
     size = [self boundingRectWithSize:maxSize
@@ -17,23 +20,28 @@
                            attributes:@{NSFontAttributeName: font}
                               context:nil].size;
     
-    if (size.width == 0.f || size.height == 0.f) {
-        return CGSizeZero;
-    } else {
+    if (size.width == 0.f
+        || size.height == 0.f) return CGSizeZero;
+
 #if defined(__LP64__) && __LP64__
-        return CGSizeMake(ceil(size.width), ceil(size.height));
+    return CGSizeMake(ceil(size.width), ceil(size.height));
 #else
-        return CGSizeMake(ceilf(size.width), ceilf(size.height));
+    return CGSizeMake(ceilf(size.width), ceilf(size.height));
 #endif
-    }
+
 }
 
 + (NSStringDrawingOptions)stringOptionsForLineBreakMode:(NSLineBreakMode)lineBreakMode {
+
     switch (lineBreakMode) {
+
         case NSLineBreakByWordWrapping: return NSStringDrawingUsesLineFragmentOrigin;
         case NSLineBreakByTruncatingTail: return NSStringDrawingTruncatesLastVisibleLine;
+
         default: return NSStringDrawingUsesLineFragmentOrigin;
+
     }
+
 }
 
 @end
