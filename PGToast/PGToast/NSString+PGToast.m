@@ -12,16 +12,10 @@
 - (CGSize)ap_toastSizeWithFont:(UIFont *)font constrainedToSize:(CGSize)maxSize lineBreakMode:(NSLineBreakMode)lineBreakMode {
     CGSize size;
 
-    if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) {
-        size = [self boundingRectWithSize:maxSize
-                                  options:[[self class] stringOptionsForLineBreakMode:lineBreakMode]
-                               attributes:@{NSFontAttributeName: font}
-                                  context:nil].size;
-    } else {
-        size = [self sizeWithFont:font
-                constrainedToSize:maxSize
-                    lineBreakMode:lineBreakMode];
-    }
+    size = [self boundingRectWithSize:maxSize
+                              options:[[self class] stringOptionsForLineBreakMode:lineBreakMode]
+                           attributes:@{NSFontAttributeName: font}
+                              context:nil].size;
     
     if (size.width == 0.f || size.height == 0.f) {
         return CGSizeZero;

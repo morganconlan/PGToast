@@ -45,7 +45,8 @@ static NSTimeInterval _PGToasterAnimationDuration = 0.2f;
             parentView:(UIView *)parentView
               duration:(NSTimeInterval)duration
          tapToComplete:(BOOL)tapToComplete
-            completion:(void (^)())completion {
+            completion:(void (^)(void))completion {
+    
     PGToast *toast = [[PGToast alloc] init];
     toast.duration = duration;
     toast.tapToComplete = tapToComplete;

@@ -28,7 +28,7 @@
     return [self ap_makeToast:toastText duration:duration position:position completion:nil];
 }
 
-- (NSInteger)ap_makeToast:(NSString *)toastText duration:(NSTimeInterval)duration position:(PGToastPosition)position completion:(void (^)())completion {
+- (NSInteger)ap_makeToast:(NSString *)toastText duration:(NSTimeInterval)duration position:(PGToastPosition)position completion:(void (^)(void))completion {
     if (!toastText.length) {
         return NSNotFound;
     }
@@ -42,7 +42,7 @@
                  duration:(NSTimeInterval)duration
                    center:(CGPoint)center
             tapToComplete:(BOOL)tapToComplete
-               completion:(void (^)())completion {
+               completion:(void (^)(void))completion {
     if (!toastText.length) {
         return NSNotFound;
     }
@@ -70,7 +70,7 @@
                      duration:(NSTimeInterval)duration
                        center:(CGPoint)center
                 tapToComplete:(BOOL)tapToComplete
-                   completion:(void (^)())completion {
+                   completion:(void (^)(void))completion {
     if (!toastView) {
         return NSNotFound;
     }
