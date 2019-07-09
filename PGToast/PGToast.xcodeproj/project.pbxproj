@@ -9,7 +9,16 @@
 /* Begin PBXBuildFile section */
 		01D282C522D520EC00D41F6E /* PGToast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01D282BB22D520EC00D41F6E /* PGToast.framework */; };
 		01D282CA22D520EC00D41F6E /* PGToastTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D282C922D520EC00D41F6E /* PGToastTests.m */; };
-		01D282CC22D520EC00D41F6E /* PGToast.h in Headers */ = {isa = PBXBuildFile; fileRef = 01D282BE22D520EC00D41F6E /* PGToast.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		01D282DF22D5216000D41F6E /* UIView+PGToastStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D282D522D5215D00D41F6E /* UIView+PGToastStyle.m */; };
+		01D282E022D5216000D41F6E /* UIView+PGToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D282D622D5215D00D41F6E /* UIView+PGToast.m */; };
+		01D282E122D5216000D41F6E /* PGToaster.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D282D722D5215D00D41F6E /* PGToaster.m */; };
+		01D282E222D5216000D41F6E /* PGToast.h in Headers */ = {isa = PBXBuildFile; fileRef = 01D282D822D5215E00D41F6E /* PGToast.h */; };
+		01D282E322D5216000D41F6E /* NSString+PGToast.h in Headers */ = {isa = PBXBuildFile; fileRef = 01D282D922D5215E00D41F6E /* NSString+PGToast.h */; };
+		01D282E422D5216000D41F6E /* UIView+PGToastStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 01D282DA22D5215E00D41F6E /* UIView+PGToastStyle.h */; };
+		01D282E522D5216000D41F6E /* PGToaster.h in Headers */ = {isa = PBXBuildFile; fileRef = 01D282DB22D5215F00D41F6E /* PGToaster.h */; };
+		01D282E622D5216000D41F6E /* PGToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D282DC22D5215F00D41F6E /* PGToast.m */; };
+		01D282E722D5216000D41F6E /* NSString+PGToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D282DD22D5215F00D41F6E /* NSString+PGToast.m */; };
+		01D282E822D5216000D41F6E /* UIView+PGToast.h in Headers */ = {isa = PBXBuildFile; fileRef = 01D282DE22D5216000D41F6E /* UIView+PGToast.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,11 +33,20 @@
 
 /* Begin PBXFileReference section */
 		01D282BB22D520EC00D41F6E /* PGToast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PGToast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		01D282BE22D520EC00D41F6E /* PGToast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PGToast.h; sourceTree = "<group>"; };
 		01D282BF22D520EC00D41F6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01D282C422D520EC00D41F6E /* PGToastTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PGToastTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		01D282C922D520EC00D41F6E /* PGToastTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PGToastTests.m; sourceTree = "<group>"; };
 		01D282CB22D520EC00D41F6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01D282D522D5215D00D41F6E /* UIView+PGToastStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+PGToastStyle.m"; sourceTree = "<group>"; };
+		01D282D622D5215D00D41F6E /* UIView+PGToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+PGToast.m"; sourceTree = "<group>"; };
+		01D282D722D5215D00D41F6E /* PGToaster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGToaster.m; sourceTree = "<group>"; };
+		01D282D822D5215E00D41F6E /* PGToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGToast.h; sourceTree = "<group>"; };
+		01D282D922D5215E00D41F6E /* NSString+PGToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PGToast.h"; sourceTree = "<group>"; };
+		01D282DA22D5215E00D41F6E /* UIView+PGToastStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+PGToastStyle.h"; sourceTree = "<group>"; };
+		01D282DB22D5215F00D41F6E /* PGToaster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGToaster.h; sourceTree = "<group>"; };
+		01D282DC22D5215F00D41F6E /* PGToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGToast.m; sourceTree = "<group>"; };
+		01D282DD22D5215F00D41F6E /* NSString+PGToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PGToast.m"; sourceTree = "<group>"; };
+		01D282DE22D5216000D41F6E /* UIView+PGToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+PGToast.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +89,16 @@
 		01D282BD22D520EC00D41F6E /* PGToast */ = {
 			isa = PBXGroup;
 			children = (
-				01D282BE22D520EC00D41F6E /* PGToast.h */,
+				01D282D822D5215E00D41F6E /* PGToast.h */,
+				01D282DC22D5215F00D41F6E /* PGToast.m */,
+				01D282DB22D5215F00D41F6E /* PGToaster.h */,
+				01D282D722D5215D00D41F6E /* PGToaster.m */,
+				01D282D922D5215E00D41F6E /* NSString+PGToast.h */,
+				01D282DD22D5215F00D41F6E /* NSString+PGToast.m */,
+				01D282DE22D5216000D41F6E /* UIView+PGToast.h */,
+				01D282D622D5215D00D41F6E /* UIView+PGToast.m */,
+				01D282DA22D5215E00D41F6E /* UIView+PGToastStyle.h */,
+				01D282D522D5215D00D41F6E /* UIView+PGToastStyle.m */,
 				01D282BF22D520EC00D41F6E /* Info.plist */,
 			);
 			path = PGToast;
@@ -93,7 +120,11 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01D282CC22D520EC00D41F6E /* PGToast.h in Headers */,
+				01D282E822D5216000D41F6E /* UIView+PGToast.h in Headers */,
+				01D282E422D5216000D41F6E /* UIView+PGToastStyle.h in Headers */,
+				01D282E222D5216000D41F6E /* PGToast.h in Headers */,
+				01D282E322D5216000D41F6E /* NSString+PGToast.h in Headers */,
+				01D282E522D5216000D41F6E /* PGToaster.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +224,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01D282E622D5216000D41F6E /* PGToast.m in Sources */,
+				01D282DF22D5216000D41F6E /* UIView+PGToastStyle.m in Sources */,
+				01D282E722D5216000D41F6E /* NSString+PGToast.m in Sources */,
+				01D282E022D5216000D41F6E /* UIView+PGToast.m in Sources */,
+				01D282E122D5216000D41F6E /* PGToaster.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
