@@ -13,12 +13,12 @@
 		01D282E022D5216000D41F6E /* UIView+PGToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D282D622D5215D00D41F6E /* UIView+PGToast.m */; };
 		01D282E122D5216000D41F6E /* PGToaster.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D282D722D5215D00D41F6E /* PGToaster.m */; };
 		01D282E222D5216000D41F6E /* PGToast.h in Headers */ = {isa = PBXBuildFile; fileRef = 01D282D822D5215E00D41F6E /* PGToast.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		01D282E322D5216000D41F6E /* NSString+PGToast.h in Headers */ = {isa = PBXBuildFile; fileRef = 01D282D922D5215E00D41F6E /* NSString+PGToast.h */; };
-		01D282E422D5216000D41F6E /* UIView+PGToastStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 01D282DA22D5215E00D41F6E /* UIView+PGToastStyle.h */; };
+		01D282E322D5216000D41F6E /* NSString+PGToast.h in Headers */ = {isa = PBXBuildFile; fileRef = 01D282D922D5215E00D41F6E /* NSString+PGToast.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		01D282E422D5216000D41F6E /* UIView+PGToastStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 01D282DA22D5215E00D41F6E /* UIView+PGToastStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		01D282E522D5216000D41F6E /* PGToaster.h in Headers */ = {isa = PBXBuildFile; fileRef = 01D282DB22D5215F00D41F6E /* PGToaster.h */; };
 		01D282E622D5216000D41F6E /* PGToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D282DC22D5215F00D41F6E /* PGToast.m */; };
 		01D282E722D5216000D41F6E /* NSString+PGToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D282DD22D5215F00D41F6E /* NSString+PGToast.m */; };
-		01D282E822D5216000D41F6E /* UIView+PGToast.h in Headers */ = {isa = PBXBuildFile; fileRef = 01D282DE22D5216000D41F6E /* UIView+PGToast.h */; };
+		01D282E822D5216000D41F6E /* UIView+PGToast.h in Headers */ = {isa = PBXBuildFile; fileRef = 01D282DE22D5216000D41F6E /* UIView+PGToast.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
